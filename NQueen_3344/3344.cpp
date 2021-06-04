@@ -9,7 +9,7 @@ int promising(int n) {
 
 }
 void nQueen(int num) {
-	if (num == N) return;
+	if (num == N) count++;
 	if (promising(num)) {
 		for (int i = 1; i <= N; i++) {
 
