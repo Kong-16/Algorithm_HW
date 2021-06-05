@@ -24,7 +24,7 @@
     <ProjectGuid>{9081edfe-9ed6-4a02-81de-f657afa943ca}</ProjectGuid>
     <RootNamespace>My1197</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>MST_1197</ProjectName>
+    <ProjectName>Greedy_Kruskal_1197</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

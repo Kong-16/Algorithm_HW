@@ -1,3 +1,10 @@
+/* dp 알고리즘. 
+* DNA정렬시 mismatch는 2, gap은 3의 penalty를 받는다.
+* penalty가 가장 작은 정렬을 구함.
+* M은 penalty의 값, P는 gap 없을 시 1, y-gap 2, x-gap 3 값 넣음.
+* P의 값 따라감. 1일 때 대각선 위, 2일 때 가로왼쪽 한 칸, 3일 때 세로 위쪽 한 칸
+* 끝에 다다르면 1,1 지점까지 직선으로 이동.
+*/
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -26,7 +33,9 @@ void opt() {
 	for (int i = 1; i <= m; i++) {
 		for (int j = 1; j <= n; j++) {
 			if (x[i] == y[j]) penalty = 0; else penalty = 2;
+			//x[i]와 y[j]가 같은지 검사
 			M[i][j] = get_min(M[i - 1][j - 1] + penalty, M[i - 1][j] + 3, M[i][j - 1] + 3);
+			// 이전 페널티 + 이번 페널티 , y에 갭 넣기, x에 갭 넣기
 			if (M[i][j] == M[i - 1][j - 1] + penalty) P[i][j] = 1;
 			else if (M[i][j] == M[i - 1][j] + 3) P[i][j] = 2;
 			else P[i][j] = 3;
@@ -53,20 +62,20 @@ void align() {
 			Y.push('-');
 		}
 		switch (P[i][j]) {
-		case 1:
+		case 1: // gap 없는 경우
 			X.push(x[i]);
 			Y.push(y[j]);
-			i--; j--;
+			i--; j--; // 대각선 위 이동
 			break;
-		case 2:
+		case 2: // y gap
 			X.push(x[i]);
 			Y.push('-');
-			i--;
+			i--; // x만 이동
 			break;
-		case 3:
+		case 3: // x gap
 			X.push('-');
 			Y.push(y[j]);
-			j--;
+			j--; // y 만 이동
 			break;
 		}
 	}
