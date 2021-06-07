@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1975a662-e3a1-47d1-bc12-1fe6d328be9f}</ProjectGuid>
-    <RootNamespace>Greedyknapsack12865</RootNamespace>
+    <ProjectGuid>{672af8bb-1d31-4f22-a1c7-93d8f8ddf1c6}</ProjectGuid>
+    <RootNamespace>BackTrackingKnapsack</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>DP_knapsack_12865</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="12865.cpp" />
+    <ClCompile Include="12865_BT.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
